@@ -9,18 +9,18 @@ import routes from './routes';
 require('dotenv').config();
 
 mongoose
-  // .connect(
-  //   `mongodb+srv://${process.env.USER_PASS_MONGODB}@processoseletivo.0sbsh.mongodb.net/tractian?retryWrites=true&w=majority`,
-  //   {
-  //     useNewUrlParser: true,
-  //     useUnifiedTopology: true,
-  //   }
-  // )
+  .connect(
+    `mongodb+srv://${process.env.USER_PASS_MONGODB}@processoseletivo.0sbsh.mongodb.net/tractian?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
 
-  .connect(`mongodb://localhost:27017/tractian`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  // .connect(`mongodb://localhost:27017/tractian`, {
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true,
+  // })
   .then(() => {
     console.log(`MongoDB conectado com sucesso.`);
   });
