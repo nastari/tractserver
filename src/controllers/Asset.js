@@ -148,3 +148,20 @@ export const index = async (req, res) => {
 };
 
 //
+
+export const readOne = (req, res) => {
+  const { id } = req.query;
+
+  if (!id) {
+    return res.status(400).json({ Erro: 'Identificador ausente.' });
+  }
+  // verify valid objectId
+
+  Asset.find({ _id: id }).then((data, e) => {
+    if (e) {
+      return res.status(400).json({ Erro: e });
+    }
+
+    return res.json(data);
+  });
+};

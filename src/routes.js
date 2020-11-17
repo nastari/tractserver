@@ -29,6 +29,7 @@ routes.post('/asset', AssetController.store);
 routes.get('/asset', AssetController.index);
 routes.put('/asset', AssetController.update);
 routes.delete('/asset', AssetController.delet);
+routes.get('/one_asset', AssetController.readOne);
 
 // users
 
