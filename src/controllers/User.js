@@ -62,7 +62,7 @@ export const index = async (req, res) => {
     return res.status(400).json({ Erro: 'Companhia não vinculada' });
   }
 
-  return User.find({ company: company_id }, async (e, data) => {
+  return User.find({ company_id: company_id }, async (e, data) => {
     if (e) {
       return res
         .status(400)
