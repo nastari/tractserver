@@ -1,9 +1,9 @@
-import { Types } from 'mongoose';
+import mongoose from 'mongoose';
 import Company from '../models/Company';
 import User from '../models/User';
 
 export const store = async (req, res) => {
-  const id = Types.ObjectId();
+  const id = mongoose.Types.ObjectId();
 
   const { nameCompany, nameCollaborator } = req.body;
 
