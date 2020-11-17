@@ -10,7 +10,7 @@ export const store = async (req, res) => {
     return res.status(400).json({ message: 'Nenhuma companhia vinculada.' });
   }
 
-  const user = new User({ name, job, company: company_id });
+  const user = new User({ name, job, company_id });
 
   Company.findByIdAndUpdate(
     company_id,
@@ -62,7 +62,7 @@ export const index = async (req, res) => {
     return res.status(400).json({ Erro: 'Companhia não vinculada' });
   }
 
-  return User.find({ company_id: company_id }, async (e, data) => {
+  return User.find({ company_id }, async (e, data) => {
     if (e) {
       return res
         .status(400)
