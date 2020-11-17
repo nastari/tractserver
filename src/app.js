@@ -16,13 +16,12 @@ mongoose
       useUnifiedTopology: true,
     }
   )
-
   // .connect(`mongodb://localhost:27017/tractian`, {
   //   useNewUrlParser: true,
   //   useUnifiedTopology: true,
   // })
   .then(() => {
-    console.log(`MongoDB conectado com sucesso.`);
+    console.log(`MongoDB conectado com sucesso!`);
   });
 
 class App {
