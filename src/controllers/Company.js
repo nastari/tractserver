@@ -21,10 +21,13 @@ export const store = async (req, res) => {
 
   await company
     .save()
-    .then(() => user.save())
-    .catch(() => res.status(400).json({ Erro: 'Falha ao criar Companhia.' }));
-
-  return res.status(200).json({ Mensagem: 'Companhia criada com sucesso.' });
+    .then((data) => {
+      user.save();
+      return res.status(200).json(data);
+    })
+    .catch((e) =>
+      res.status(400).json({ Erro: `Falha ao criar Companhia.${e}` })
+    );
 };
 
 export const update = async (req, res) => {
